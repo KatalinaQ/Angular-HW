@@ -1,0 +1,15 @@
+<div class="container">
+<app-todo-list-filters
+(filterEvent)="filterTodoItems($event)"></app-todo-list-filters>
+
+<div *ngIf="hasValidItems();else elseBlock">
+    <app-todo-list 
+        [list]="todoList" 
+        (deleteEvent)="deleteTodoItem($event)"
+        (completeEvent)="completeTodoItem($event)">
+    </app-todo-list>
+</div>
+<ng-template #elseBlock>
+<div>There are no available data</div>
+</ng-template>
+</div>
