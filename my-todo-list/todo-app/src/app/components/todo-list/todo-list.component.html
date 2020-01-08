@@ -1,0 +1,15 @@
+<div class="container mt-5">
+    
+    <ul class="list-group">
+        <app-todo-list-item  
+        *ngFor="let item of list; let i = index; let odd = odd" 
+        [item]="item"
+        (deleteEvent)="onDeleteItem($event)"
+        (completeEvent)="onCompleteItem($event)"
+        ></app-todo-list-item>
+        
+        <!--<ng-template ngFor let-item [ngForOf] = "list"> 
+
+        </ng-template>-->
+    </ul>
+</div>
